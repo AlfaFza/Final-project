@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: #150326d1;
+}
+.container {
+    padding: 50px;
+  background-color:#763559eb;
+}
+
+input[type=text], input[type=password], textarea {
+  width: 30%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background:#2c2323;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: orange;
+  outline: none;
+    color:white;
+}
+ div {
+            padding: 10px 0;
+         }
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  opacity: 0.9;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+  <div class="container">
+  <center>  <h1> LOGIN</h1>
+  <hr>
+<form   action="login" method="post">
+    {% csrf_token %}
+        <label> Username: </label>
+            <input type="text" name="uname" placeholder="Username" size="15"required />
+        <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+         <button type="submit" class="registerbtn">Login</button>
+</form>
+  </center>
+  </div>
+
+
+</body>
+</html>
+{% endblock %}
