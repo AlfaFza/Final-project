@@ -37,6 +37,7 @@ def prodDetails(request,c_slug,product_slug):
 
     return render(request,'item.html',{'pr':prod})
 
+@login_required(login_url='login')
 def searching(request):
     prod=None
     query=None
